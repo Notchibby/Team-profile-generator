@@ -60,6 +60,7 @@ header {
     font-weight: 600;
     box-sizing: border-box;
     padding: 2%;
+    font-size: 15px;
 }
 
 .cardtitle {
