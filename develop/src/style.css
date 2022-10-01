@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: #000000;
+    font-size: 12px;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+header {
+
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #e03c3c;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.pagebody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+
+}
+.cardheader {
+    background-color: #2b63a3;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 5%;
+
+}
+
+.cardheader p{
+    color:#ffffff;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.cardtitle {
+    box-sizing: border-box;
+    margin: 1%;
+    width: 13%;
+    box-shadow: 2px 5px #9e9c9c;
+}
+
+.cardbody {
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-color: #e6e6e6;
+}
+.bodycontent {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 1%;
+}
