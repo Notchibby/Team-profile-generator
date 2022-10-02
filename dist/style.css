@@ -38,7 +38,7 @@ header {
     padding: 2%;
 }
 
-#pagebody {
+.pagebody {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
