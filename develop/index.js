@@ -9,19 +9,19 @@ function managerQuestion(){
     inquirer.prompt([
         {
             type: 'input',
-            name: 'managerName',
+            name: 'Name',
             message: 'What is the team managers name?',
         },
     
         {
             type: 'input',
-            name: 'managerId',
+            name: 'Id',
             message: 'What is the team managers ID?',
         },
     
         {
             type: 'input',
-            name: 'managerEmail',
+            name: 'Email',
             message: 'What is the team managers Email address?',
         },
     
@@ -34,7 +34,7 @@ function managerQuestion(){
 
     .then((answers) => {
         console.log(answers);
-        const newManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber)
+        const newManager = new Manager(answers.Name, answers.Id, answers.Email, answers.officeNumber)
         answersarray.push(newManager)
         menu()
 
@@ -59,7 +59,8 @@ function menu(){
                     intern()
                 }
                 if(answers.teamMembers === 'I dont want anymore team members'){
-                    return console.log(answersarray)
+                    
+                    
                 }
             })
 
@@ -69,21 +70,21 @@ function engineer(){
     inquirer.prompt([
         {
                     type: 'input',
-                    name: 'engineerName',
+                    name: 'Name',
                     message: 'What is the Engineers name?',
             
                 },
             
                 {
                     type: 'input',
-                    name: 'engineerId',
+                    name: 'Id',
                     message: 'What is the Engineers ID?',
                    
                 },
             
                 {
                     type: 'input',
-                    name: 'engineerEmail',
+                    name: 'Email',
                     message: 'What is the Engineers Email address?',
                     
                 },
@@ -100,7 +101,7 @@ function engineer(){
 
     .then((answers) => {
         console.log(answers)
-        const newEnginner = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github)
+        const newEnginner = new Engineer(answers.Name, answers.Id, answers.Email, answers.github)
         answersarray.push(newEnginner)
         menu ()
 })
@@ -111,21 +112,21 @@ function intern(){
     inquirer.prompt([
         {
                     type: 'input',
-                    name: 'internName',
+                    name: 'Name',
                     message: 'What is the Interns name?',
                    
                 },
             
                 {
                     type: 'input',
-                    name: 'internId',
+                    name: 'Id',
                     message: 'What is the Interns ID?',
                    
                 },
             
                 {
                     type: 'input',
-                    name: 'internEmail',
+                    name: 'Email',
                     message: 'What is the Interns Email address?',
                    
                 },
@@ -141,7 +142,7 @@ function intern(){
 
     .then((answers) => {
         console.log(answers)
-        const newIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school)
+        const newIntern = new Intern(answers.Name, answers.Id, answers.Email, answers.school)
         answersarray.push(newIntern)
         menu ()
 })
