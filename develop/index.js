@@ -59,6 +59,7 @@ function menu(){
                     intern()
                 }
                 if(answers.teamMembers === 'I dont want anymore team members'){
+                    module.exports = answersarray;
                     const htmlgenerator = generateHtml()
                     
                     fs.writeFileSync('../develop/dist/dist.html', htmlgenerator, (err) =>
@@ -226,6 +227,7 @@ const generateHtml = () =>
             </div>
 
     </div>
+   
 </body>
 
 </html>`;

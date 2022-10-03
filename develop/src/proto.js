@@ -22,7 +22,24 @@ const cardarray = [
         ID: '3',
         Email: 'chibbe@gmail.com',
         school: 'Usyd'
+    },
+
+    {
+        name: 'Chibbe',
+        job: 'Intern',
+        ID: '3',
+        Email: 'chibbe@gmail.com',
+        school: 'Usyd'
+    },
+    {
+        name: 'Chibbe',
+        job: 'Intern',
+        ID: '3',
+        Email: 'chibbe@gmail.com',
+        school: 'Usyd'
     }
+
+
 
 
 ]
