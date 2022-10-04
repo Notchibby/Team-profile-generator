@@ -59,8 +59,10 @@ function menu(){
                     intern()
                 }
                 if(answers.teamMembers === 'I dont want anymore team members'){
-                    module.exports = answersarray;
-                    const htmlgenerator = generateHtml()
+                    // module.exports = answersarray;
+                    
+                    const htmlgenerator = generateHtml(answersarray)
+                    console.log(htmlgenerator)
                     
                     fs.writeFileSync('../develop/dist/dist.html', htmlgenerator, (err) =>
                     err ? console.log(err) : console.log('Successfully created index.html!'))
@@ -154,8 +156,82 @@ function intern(){
 }
 
 
-const generateHtml = () =>
-`<!DOCTYPE html>
+const generateHtml = (answersarray) => {
+    const htmlcard = [];
+for(let i = 0;  i < answersarray.length ; i++){
+    
+    if (answersarray[i].getRole() === 'Manager'){
+        htmlcard.push(`<div class="cardtitle">
+        <div class="cardheader">
+            <h2>${answersarray[i].getName()}</h2>
+            <p><i class="fa fa-mug-hot"> Manager</i></p>
+        </div>
+        <div class="cardbody">
+            <div class="bodycontent">
+            <p>ID: ${answersarray[i].getId()}</p>
+            </div>
+            <div class="bodycontent">
+            <p>Email: <a href="mailto:${answersarray[i].getEmail()}">${answersarray[i].getEmail()}</a></p>
+            </div>
+            <div class="bodycontent">
+            <p>Office number: ${answersarray[i].getOfficeNumber()} </p>
+            </div>
+        </div>
+    </div>`)
+
+    }
+
+    if (answersarray[i].getRole()=== 'Engineer'){
+        htmlcard.push(`
+        <div class="cardtitle">
+            <div class="cardheader">
+                <h2>${answersarray[i].getName()}</h2>
+                <p><i class="fa fa-glasses"> Engineer</i></p>
+            </div>
+            <div class="cardbody">
+                <div class="bodycontent">
+                <p>ID: ${answersarray[i].getId()}</p>
+                </div>
+                <div class="bodycontent">
+                <p>Email: <a href="mailto:${answersarray[i].getEmail()}">${answersarray[i].getEmail()}</a></p>
+                </div>
+                <div class="bodycontent">
+                <p>Github: ${answersarray[i].getGithub()} </p>
+                </div>
+            </div>
+        </div>
+`)
+
+
+    }
+
+    if (answersarray[i].getRole()=== 'Intern'){
+        htmlcard.push(`<div class="cardtitle">
+        <div class="cardheader">
+            <h2>${answersarray[i].getName()}</h2>
+            <p><i class="fa fa-user-graduate"> Intern</i></p>
+        </div>
+        <div class="cardbody">
+            <div class="bodycontent">
+            <p>ID: ${answersarray[i].getId()}</p>
+            </div>
+            <div class="bodycontent">
+            <p>Email: <a href="mailto:${answersarray[i].getEmail()}">${answersarray[i].getEmail()}</a></p>
+            </div>
+            <div class="bodycontent">
+            <p>School: ${answersarray[i].getSchool()} </p>
+            </div>
+        </div>
+    
+    </div>
+`)
+
+    }
+
+}
+
+
+return `<!DOCTYPE html>
 <html lang="en-us">
 
 <head>
@@ -171,66 +247,14 @@ const generateHtml = () =>
     </header>
     <div id="pagebody">
 
-        <div class="cardtitle">
-            <div class="cardheader">
-                <h2>Dan</h2>
-                <p><i class="fa fa-mug-hot"> Manager</i></p>
-            </div>
-            <div class="cardbody">
-                <div class="bodycontent">
-                <p>ID: 1</p>
-                </div>
-                <div class="bodycontent">
-                <p>Email: <a href="mailto:dan@gmail.com">dan@gmail.com</a></p>
-                </div>
-                <div class="bodycontent">
-                <p>Office number: 999 </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cardtitle">
-            <div class="cardheader">
-                <h2>Doug</h2>
-                <p><i class="fa fa-glasses"> Engineer</i></p>
-            </div>
-            <div class="cardbody">
-                <div class="bodycontent">
-                <p>ID: 2</p>
-                </div>
-                <div class="bodycontent">
-                <p>Email: <a href="mailto:Doug@gmail.com">Doug@gmail.com</a></p>
-                </div>
-                <div class="bodycontent">
-                <p>Github: Dougiscool </p>
-                </div>
-            </div>
-        </div>
-
-            <div class="cardtitle">
-                <div class="cardheader">
-                    <h2>Chibbe</h2>
-                    <p><i class="fa fa-user-graduate"> Intern</i></p>
-                </div>
-                <div class="cardbody">
-                    <div class="bodycontent">
-                    <p>ID: 3</p>
-                    </div>
-                    <div class="bodycontent">
-                    <p>Email: <a href="mailto:Chibbe@gmail.com">Chibbe@gmail.com</a></p>
-                    </div>
-                    <div class="bodycontent">
-                    <p>School: Usyd </p>
-                    </div>
-                </div>
-            
-            </div>
+    ${htmlcard}
 
     </div>
    
 </body>
 
 </html>`;
+}
 
 
 
