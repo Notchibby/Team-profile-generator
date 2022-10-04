@@ -70,7 +70,7 @@ function menu() {
                 //generates htmlpage with the answers from the prompt questions
                 const htmlgenerator = generateHtml(answersarray)
 
-                fs.writeFileSync('../develop/dist/dist.html', htmlgenerator, (err) =>
+                fs.writeFile('../develop/dist/dist.html', htmlgenerator, (err) =>
                     err ? console.log(err) : console.log('Successfully created index.html!'))
             }
         })
@@ -215,7 +215,7 @@ const generateHtml = (answersarray) => {
                 <p>Email: <a href="mailto:${answersarray[i].getEmail()}">${answersarray[i].getEmail()}</a></p>
                 </div>
                 <div class="bodycontent">
-                <p>Github: ${answersarray[i].getGithub()} </p>
+                <p>Github: <a href="${answersarray[i].getGithub()}">${answersarray[i].getGithub()}</a></p>
                 </div>
             </div>
         </div>
