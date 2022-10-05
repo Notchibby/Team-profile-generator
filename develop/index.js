@@ -215,7 +215,7 @@ const generateHtml = (answersarray) => {
                 <p>Email: <a href="mailto:${answersarray[i].getEmail()}">${answersarray[i].getEmail()}</a></p>
                 </div>
                 <div class="bodycontent">
-                <p>Github: <a href="${answersarray[i].getGithub()}">${answersarray[i].getGithub()}</a></p>
+                <p>Github: <a href="${answersarray[i].getGithub()}" target="_blank">${answersarray[i].getGithub()}</a></p>
                 </div>
             </div>
         </div>
