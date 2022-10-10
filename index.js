@@ -71,7 +71,7 @@ function menu() {
                 //generates htmlpage with the answers from the prompt questions
                 const htmlgenerator = generateHtml(answersarray)
 
-                fs.writeFile('../develop/dist/dist.html', htmlgenerator, (err) =>
+                fs.writeFile('./dist/dist.html', htmlgenerator, (err) =>
                     err ? console.log(err) : console.log('Successfully created index.html!'))
             }
         })
