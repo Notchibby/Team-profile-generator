@@ -8,4 +8,4 @@ This project aims to promote and reinforce our understanding of obeject oriented
 https://github.com/Notchibby/Team-profile-generator.git
 
 ## link to walkthrough video
-https://drive.google.com/file/d/17HX4vWy0VMsvdRj596aok2Ac4EJ-HgCn/view
+https://drive.google.com/file/d/181vzevXbPPLK98sZtvHzwfHy3oxIuhVM/view
